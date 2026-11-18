@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vedika Taji | Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3F5F9;--surface:#FFFFFF;--ink:#14213D;--muted:#4B5873;--line:#D5DCE8;
+  --accent:#0E7C7B;--accent-ink:#FFFFFF;--code-bg:#14213D;--code-text:#DCE6F5;--code-key:#FFC857;--code-str:#7FD6C8;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0D1526;--surface:#14213D;--ink:#EAF0FA;--muted:#A9B6CE;--line:#27375A;--accent:#4FD1C5;--accent-ink:#0D1526;--code-bg:#08101F;}
+}
+:root[data-theme="dark"]{--bg:#0D1526;--surface:#14213D;--ink:#EAF0FA;--muted:#A9B6CE;--line:#27375A;--accent:#4FD1C5;--accent-ink:#0D1526;--code-bg:#08101F;}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.brand{font:700 18px var(--display);text-decoration:none}
+nav a{margin-left:20px;text-decoration:none;color:var(--muted);font-size:15px}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:72px 0 64px}
+h1{font:800 clamp(44px,7vw,84px)/0.98 var(--display);letter-spacing:-0.03em;margin:0 0 20px}
+.lead{font-size:20px;color:var(--muted);max-width:30em;margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:500;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn{border-radius:6px}.btn:hover{opacity:.88}
+.role{font:500 19px var(--display);color:var(--accent);margin:0 0 16px}
+.snap{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:8px;padding:6px 24px}
+.snap dl{margin:0}.snap div{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.snap div:last-child{border-bottom:0}.snap dt{color:var(--muted)}.snap dd{margin:0;font-weight:500;text-align:right}
+section{padding:56px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(28px,4vw,40px)/1.1 var(--display);letter-spacing:-0.02em;margin:0 0 28px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p{margin:0 0 16px;max-width:36em}
+.facts{list-style:none;margin:0;padding:0}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.facts span:first-child{color:var(--muted)}
+.facts span:last-child{font-weight:500;text-align:right}
+details.proj{border-top:1px solid var(--line)}
+details.proj:last-of-type{border-bottom:1px solid var(--line)}
+details.proj summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0}
+details.proj summary::-webkit-details-marker{display:none}
+.pt{font:700 clamp(20px,2.6vw,26px)/1.2 var(--display)}
+.pt small{display:block;font:400 15px var(--body);color:var(--muted);margin-top:4px}
+.plus{flex:none;width:34px;height:34px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:22px;line-height:1;transition:transform .2s}
+details[open] .plus{transform:rotate(45deg);background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.pbody{padding:0 0 26px;max-width:46em}
+.pbody ul{margin:0 0 14px;padding-left:20px}
+.pbody li{margin-bottom:6px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:3px 12px;font-size:14px}
+.tl{border-left:3px solid var(--accent);padding-left:28px;margin-left:6px}
+.job{position:relative;margin-bottom:36px}
+.job::before{content:"";position:absolute;left:-37px;top:8px;width:15px;height:15px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job h3{font:700 22px/1.25 var(--display);margin:0}
+.job .meta{color:var(--muted);margin:2px 0 10px;font-size:15px}
+.job ul{margin:0;padding-left:20px}.job li{margin-bottom:6px}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px}
+.skills h3{font:700 18px var(--display);margin:0 0 10px}
+.edu{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.edu div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.edu b{font:700 28px var(--display);display:block;color:var(--accent)}
+.edu h3{margin:6px 0 2px;font:700 17px/1.3 var(--display)}
+.edu p{margin:0;color:var(--muted);font-size:15px}
+.contact{text-align:left}
+.contact .big{font:800 clamp(28px,5vw,52px)/1.1 var(--display);letter-spacing:-0.02em;word-break:break-word;text-decoration:none;display:inline-block;margin-bottom:20px;border-bottom:4px solid var(--accent)}
+footer{padding:28px 0 40px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:760px){
+  .hero,.about,.skills,.edu{grid-template-columns:1fr}
+  .hero{padding:44px 0}
+  nav a{margin-left:12px;font-size:14px}
+  body{font-size:16px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Vedika Taji</a>
+  <nav><a href="#about">About</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top" class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Vedika Taji</h1>
+      <p class="role">Entry-level Software Engineer: Java, SQL, REST APIs</p>
+      <p class="lead">Computer Science (AI/ML) undergraduate with hands-on Java and SQL experience, building tested, user-focused applications. Experience spans web development and GenAI quality evaluation. Seeking an internship or entry-level role in Pune.</p>
+      <div class="btns">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="mailto:vedikataji07@gmail.com">Contact</a>
+        <a class="btn" href="https://linkedin.com/in/vedika-taji-216105327" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <aside class="snap" aria-label="Profile snapshot"><dl>
+      <div><dt>Core stack</dt><dd>Java, JavaScript, SQL</dd></div>
+      <div><dt>Experience</dt><dd>2 internships: Java web, GenAI</dd></div>
+      <div><dt>Projects</dt><dd>4 end-to-end builds</dd></div>
+      <div><dt>Education</dt><dd>B.Tech CSE (AI/ML), CGPA 8.44</dd></div>
+      <div><dt>Location</dt><dd>Vaijapur, open to Pune</dd></div>
+    </dl></aside>
+  </div>
+
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <div>
+        <p>I am a B.Tech student in CSE with an AI/ML specialization at Sanjivani University. I like turning a user’s need into working, tested code, and I am most comfortable in Java with SQL behind it.</p>
+        <p>I have built four end-to-end projects, worked on a Java web application during an internship, and spent four months evaluating and refining LLM responses. I enjoy working with teams and can also own a task on my own.</p>
+      </div>
+      <ul class="facts">
+        <li><span>Studying</span><span>B.Tech CSE (AI/ML), 2024–2027</span></li>
+        <li><span>CGPA</span><span>8.44 / 10</span></li>
+        <li><span>Based in</span><span>Vaijapur, Maharashtra</span></li>
+        <li><span>Languages</span><span>English, Hindi, Marathi, Japanese (N4)</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <details class="proj" open>
+      <summary><span class="pt">Health Predictor<small>AI-driven preventive healthcare web app</small></span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="pbody">
+        <ul>
+          <li>Flask web application that predicts three health risk categories: cardiovascular disease, diabetes and skin conditions.</li>
+          <li>Connects machine learning and deep learning models to the app through Python APIs, so results are easy to read.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Machine Learning</span><span class="tag">Deep Learning</span></div>
+      </div>
+    </details>
+    <details class="proj">
+      <summary><span class="pt">Laryngeal Cancer Detection<small>Voice-based screening website</small></span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="pbody">
+        <ul>
+          <li>Classifies laryngeal cancer from speech using MFCC and ZCR features with an SVM classifier.</li>
+          <li>MySQL backend and a simple interface for testing and validation.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">SVM</span><span class="tag">MFCC</span><span class="tag">ZCR</span><span class="tag">MySQL</span></div>
+      </div>
+    </details>
+    <details class="proj">
+      <summary><span class="pt">SafeVision<small>Real-time smart CCTV threat detection</small></span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="pbody">
+        <ul>
+          <li>Detects unauthorized entry using zone-based monitoring and time-based verification.</li>
+          <li>Flags masked people and camera tampering, sends alerts that escalate, and saves evidence.</li>
+        </ul>
+        <div class="tags"><span class="tag">Python</span><span class="tag">OpenCV</span><span class="tag">Computer Vision</span><span class="tag">Machine Learning</span></div>
+      </div>
+    </details>
+    <details class="proj">
+      <summary><span class="pt">EmpathyBot<small>AI-powered autism support robot</small></span><span class="plus" aria-hidden="true">+</span></summary>
+      <div class="pbody">
+        <ul>
+          <li>Robot and mobile app that reads facial emotions with OpenCV and holds NLP-based conversations.</li>
+          <li>Logs data in real time with Firebase.</li>
+        </ul>
+        <div class="tags"><span class="tag">Flutter</span><span class="tag">Python</span><span class="tag">ESP32</span><span class="tag">Raspberry Pi</span><span class="tag">OpenCV</span><span class="tag">NLP</span><span class="tag">Firebase</span></div>
+      </div>
+    </details>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="tl">
+      <div class="job">
+        <h3>Post LLM Trainer Intern, Ethara AI</h3>
+        <p class="meta">Feb 2026 – May 2026</p>
+        <ul>
+          <li>Evaluated and refined GenAI responses to improve accuracy and relevance.</li>
+          <li>Tested and debugged AI outputs against quality criteria, then worked with the team to resolve issues.</li>
+          <li>Helped with data annotation, testing and optimization to improve model performance.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Web Development Intern, Smartpacey</h3>
+        <p class="meta">Jun 2023 – Jul 2023 · Chh. Sambhajinagar</p>
+        <ul>
+          <li>Built front-end and back-end features for Java-based web applications with HTML, CSS and JavaScript.</li>
+          <li>Tested, debugged and fixed issues while following the software development lifecycle.</li>
+          <li>Completed industrial training in Java web development: design, development and testing.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Programming and web</h3><div class="tags"><span class="tag">Java</span><span class="tag">JavaScript</span><span class="tag">Python</span><span class="tag">C++</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Flask</span></div></div>
+      <div><h3>Java in depth</h3><div class="tags"><span class="tag">OOP</span><span class="tag">Collections Framework</span><span class="tag">Exception Handling</span><span class="tag">Multithreading</span><span class="tag">JDBC</span></div></div>
+      <div><h3>Databases and APIs</h3><div class="tags"><span class="tag">SQL</span><span class="tag">MySQL</span><span class="tag">RESTful APIs</span><span class="tag">Firebase</span></div></div>
+      <div><h3>Engineering practice</h3><div class="tags"><span class="tag">SDLC</span><span class="tag">Software Design</span><span class="tag">Debugging</span><span class="tag">Testing</span><span class="tag">Git</span><span class="tag">GitHub</span></div></div>
+      <div><h3>GenAI and AI/ML</h3><div class="tags"><span class="tag">LLM Prompt Evaluation</span><span class="tag">NLP</span><span class="tag">Hugging Face</span><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">Scikit-Learn</span><span class="tag">OpenCV</span><span class="tag">Pandas</span><span class="tag">PySpark</span></div></div>
+      <div><h3>Tools</h3><div class="tags"><span class="tag">VS Code</span><span class="tag">Google Colab</span><span class="tag">IBM Watsonx Studio</span><span class="tag">IBM SPSS</span><span class="tag">Power BI</span><span class="tag">Streamlit</span><span class="tag">Flutter</span></div></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education and activities</h2>
+    <div class="edu">
+      <div><b>8.44</b><h3>B.Tech, CSE (AI/ML)</h3><p>Sanjivani University, Kopargaon · 2024–2027</p></div>
+      <div><b>86.29%</b><h3>Diploma, Computer Technology</h3><p>Sanjivani K.B.P Polytechnic · 2021–2024</p></div>
+      <div><b>81.6%</b><h3>SSC, Maharashtra Board</h3><p>Arohan Academy, Vaijapur · 2021</p></div>
+    </div>
+    <p style="margin-top:28px;max-width:46em"><b>Certifications:</b> IBM Cloud Fundamentals, IBM Predictive Modeling with SPSS Modeler, IBM Watson Studio, IBM Deep Learning Analytics, JLPT N4.<br>
+    <b>Activities:</b> Web Development Core Committee Member at Sanjivani University (2025–2026), Smart India Hackathon participant, and presenter at the Dipex 2025 state-level project competition.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <a class="big" href="mailto:vedikataji07@gmail.com">vedikataji07@gmail.com</a>
+    <div class="btns">
+      <a class="btn primary" href="https://linkedin.com/in/vedika-taji-216105327" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Vedika Taji</div></footer>
+</body>
+</html>
